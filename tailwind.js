@@ -5,8 +5,7 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      display: ["Gilroy", "sans-serif"],
-      body: ["Graphik", "sans-serif"],
+      "nuni": ["Quicksand", "sans-serif"],
     },
     extend: {
       colors: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container font-nuni">
     <div class="grid grid-cols-3 gap-x-5 gap-y-6">
       <div class="container">
         <div class="container">
@@ -219,3 +219,5 @@
     </div>
   </div>
 </template>
+
+

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <bigbox-Actividad />
+    <Card />
   </div>
 </template>
 
 <script>
-import bigboxActividad from "@/components/bigboxActividad.vue";
+import Card from "@/components/Card.vue";
 
 export default {
   name: "App",
   components: {
-    bigboxActividad,
+    Card,
   },
 };
 </script>
