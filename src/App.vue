@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Card />
+    <BigBoxCard />
   </div>
 </template>
 
 <script>
-import Card from "@/components/Card.vue";
+import BigBoxCard from "@/components/BigBoxCard.vue";
 
 export default {
   name: "App",
   components: {
-    Card,
+    BigBoxCard,
   },
 };
 </script>
