@@ -5,7 +5,7 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      "nuni": ["Quicksand", "sans-serif"],
+      nuni: ["Quicksand", "sans-serif"],
     },
     extend: {
       colors: {
