@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div class="grid grid-cols-3 gap-x-5">
+    <div class="grid grid-cols-3 gap-x-5 gap-y-6">
       <div class="container">
         <div class="container">
-          <img class="rounded-md" src="../assets/mokup_img.jpg" alt="" />
+          <img class="rounded-sm" src="../assets/mokup_img.jpg" alt="" />
         </div>
         <div class="flex justify-between my-3">
           <h1 class="font-bold">Bodegón Nuñez</h1>
