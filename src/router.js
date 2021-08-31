@@ -10,6 +10,10 @@ export default new Router({
 
   routes: [
     {
+      path: "*",
+      redirect: "/actividades",
+    },
+    {
       path: "/",
       redirect: "/actividades",
     },
