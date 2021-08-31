@@ -1,17 +1,13 @@
 <template>
-  <main id="app">
-    <BaseCard />
+  <main>
+    <router-view class="container px-5 sm:px-20 py-20 flex justify-center" />
   </main>
 </template>
 
 <script>
-import BaseCard from "@/components/BaseCard.vue";
-
 export default {
   name: "App",
-  components: {
-    BaseCard,
-  },
+  components: {},
 };
 </script>
 

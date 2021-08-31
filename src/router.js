@@ -10,8 +10,12 @@ export default new Router({
 
   routes: [
     {
+      path: "/",
+      redirect: "/actividades",
+    },
+    {
       path: "/actividades",
-      name: "home",
+      name: "AllActivities",
       component: AllActivities,
     },
   ],
