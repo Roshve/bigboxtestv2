@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-card v-bind:activities="activities"/>
+    <base-card v-bind:activities="activities" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   },
 
   created() {
-    api.getActivities().then(activities => (this.activities = activities));
+    api.getActivities().then((activities) => (this.activities = activities));
   },
 };
 </script>
