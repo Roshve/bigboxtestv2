@@ -219,3 +219,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "BaseCard",
+
+  props: {
+    assets: {
+      type: Array,
+      default: () => [],
+    },
+  },
+};
+</script>

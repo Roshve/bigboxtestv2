@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <main id="app">
     <BaseCard />
-  </div>
+  </main>
 </template>
 
 <script>
