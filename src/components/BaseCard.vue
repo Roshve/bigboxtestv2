@@ -3,7 +3,7 @@
     <div class="grid grid-cols-3 gap-x-5 gap-y-6">
       <div v-for="a in activities" :key="a.id" class="container">
         <div class="container">
-          <img class="rounded-sm" src="../assets/mokup_img.jpg" alt="" />
+          <img class="rounded" v-bind:src="JSON.parse(a.activity).image[0]" />
         </div>
         <div class="flex justify-between my-3">
           <h1 class="font-bold">{{ a.title }}</h1>
@@ -11,17 +11,17 @@
         </div>
         <div class="container my-2">
           <img src="" alt="" />
-          <p class="text-left text-sm">
+          <p class="text-left text-sm font-medium">
             {{ JSON.parse(a.activity).locations[0].province }}
           </p>
         </div>
         <div class="container">
-          <p class="text-left">
-            {{ JSON.parse(a.activity).description }}
-          </p>
+          <p class="text-left">{{ JSON.parse(a.activity).description }}</p>
         </div>
-        <div class="container my-2">
-          <p class="text-lg font-mediun text-left">{{ a.points }} puntos</p>
+        <div class="container justify-self-end my-2">
+          <p class="text-lg font-mediun font-bold text-left">
+            {{ a.points }} puntos
+          </p>
         </div>
       </div>
     </div>

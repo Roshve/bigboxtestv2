@@ -1,6 +1,12 @@
 module.exports = {
   important: true,
   theme: {
+    backgroundColor: (theme) => ({
+      ...theme("colors"),
+      primary: "#FFFFFF",
+      secondary: "#ffed4a",
+      danger: "#e3342f",
+    }),
     container: {
       center: true,
     },
