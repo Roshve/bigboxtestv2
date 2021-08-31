@@ -6,6 +6,14 @@ function getActivities() {
     .then((res) => res.json())
     .then((data) => (this.activities = data));
 }
+
+function getActiviti(actividad) {
+  return fetch(`${url}/activity/${actividad}`)
+    .then((res) => res.json())
+    .then((data) => (this.activities = data));
+}
+
 export default {
   getActivities,
+  getActiviti,
 };
