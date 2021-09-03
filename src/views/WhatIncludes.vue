@@ -1,15 +1,14 @@
 <template>
-  <div class="container">
+  <div class="grid grid-cols-2 gap-x-10 gap-y-4">
     <div class="container">
-      <splide :options="options" @splide:moved="moved">
-        <splide-slide v-for="img in activitys.image" :key="img">
-          <img
-            class="rounded"
-            :src="img"
-            :alt="JSON.parse(activiti.activity).name"
-          />
-        </splide-slide>
-      </splide>
+    <v-carousel class="rounded-lg" height="400" :show-arrows="false">
+    <v-carousel-item 
+        v-for="img in activitys.image" 
+      :key="img"
+      :src="img"
+      transition="fade-transition"
+    ></v-carousel-item>
+  </v-carousel>
     </div>
     <div class="container">
       <h1 class="text-3xl font-mediun font-bold text-left">
@@ -20,19 +19,20 @@
       <p class="text-base">{{ activitys.locations[0].province }}</p>
       <h3 class="text-2xl mt-12 font-medium">{{ activiti.points }}</h3>
     </div>
+    <div class="container">
+        <h2>Qu?</h2>      
+    </div>
   </div>
 </template>
 
 <script>
 import api from "@/api";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
+
 
 export default {
   name: "WhatIncludes",
 
   components: {
-    Splide,
-    SplideSlide,
   },
 
   data() {

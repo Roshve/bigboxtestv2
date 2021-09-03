@@ -4,7 +4,7 @@ let parse = require("parse-link-header");
 let linkHeader =
   'http://json-biglifeapp.herokuapp.com/activity?_page=1; rel="first",' +
   'http://json-biglifeapp.herokuapp.com/activity?_page=2; rel="next", ' +
-  'http://json-biglifeapp.herokuapp.com/activity?_page=213; rel="last",'
+  'http://json-biglifeapp.herokuapp.com/activity?_page=213; rel="last",';
 var parsed = parse(linkHeader);
 console.log(parsed);
 
