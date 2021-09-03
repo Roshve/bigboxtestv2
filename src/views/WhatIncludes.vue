@@ -20,7 +20,7 @@
       </h1>
       <h2 class="text-lg my-2">{{ activitys.description }}</h2>
       <p class="text-base my-4">Para {{ activiti.participants }} personas</p>
-      <p class="text-base">{{ activitys.locations[0].province }}</p>
+      <p class="text-base">{{ city }}</p>
       <h3 class="text-2xl mt-12 font-medium">{{ activiti.points }}</h3>
     </div>
     <div class="container">
@@ -71,9 +71,15 @@ export default {
     return {
       activiti: [],
       activitys: {},
+      activities: [],
     };
   },
-
+  computed: {
+    city() {
+      let i = 0;
+      return this.activitys.locations[i].province;
+    },
+  },
   created() {
     this.getActiviti();
     api.getActivities().then((activities) => (this.activities = activities));

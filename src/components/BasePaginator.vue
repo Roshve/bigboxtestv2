@@ -1,34 +1,11 @@
 <template>
-  <div></div>
+  <div class="text-center">
+    <v-pagination :length="7" circle></v-pagination>
+  </div>
 </template>
-<script>
-import api from "@/api";
 
+<script>
 export default {
   name: "BasePaginator",
-
-  data() {
-    return {
-      activiti: {},
-      activitys: {},
-    };
-  },
-
-  created() {
-    this.getActiviti();
-  },
-  methods: {
-    getActiviti() {
-      const id = this.$route.params.id;
-      api
-        .getActiviti(id)
-        .then(
-          (activiti) => (
-            (this.activiti = activiti),
-            (this.activitys = JSON.parse(activiti.activity))
-          )
-        );
-    },
-  },
 };
 </script>
