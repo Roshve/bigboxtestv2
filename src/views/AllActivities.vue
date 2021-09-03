@@ -1,6 +1,9 @@
 <template>
   <div>
-    <base-card v-bind:activities="activities" />
+    <base-card
+      v-bind:activities="activities"
+      class="grid grid-cols-3 gap-x-5 gap-y-6"
+    />
   </div>
 </template>
 
@@ -22,12 +25,7 @@ export default {
   },
 
   created() {
-    api.getActivities().then(
-      (activities) =>
-        (this.activities = activities) /* .map(function(activities) {
-        return JSON.parse(activities.activity)
-    }) */
-    );
+    api.getActivities().then((activities) => (this.activities = activities));
   },
 };
 </script>

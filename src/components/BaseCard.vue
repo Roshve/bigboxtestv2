@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-x-5 gap-y-6">
+  <div>
     <div v-for="a in activities" :key="a.id" class="container">
       <router-link :to="{ name: 'what-includes', params: { id: a.id } }">
         <div class="container">
