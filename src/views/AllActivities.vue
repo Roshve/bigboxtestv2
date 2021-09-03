@@ -16,11 +16,18 @@ export default {
   data() {
     return {
       activities: [],
+      page: 1,
+      pages: 1,
     };
   },
 
   created() {
-    api.getActivities().then((activities) => (this.activities = activities));
+    api.getActivities().then(
+      (activities) =>
+        (this.activities = activities) /* .map(function(activities) {
+        return JSON.parse(activities.activity)
+    }) */
+    );
   },
 };
 </script>

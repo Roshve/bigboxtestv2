@@ -5,14 +5,14 @@
         <div class="container">
           <img
             class="rounded"
-            v-bind:src="JSON.parse(a.activity).image[0]"
+            :src="JSON.parse(a.activity).image[0]"
             :alt="JSON.parse(a.activity).name"
           />
         </div>
         <div class="flex justify-between my-3">
           <h1 class="font-bold">{{ a.title }}</h1>
-          <p>{{ a.participants }}</p>
-          <img src="../assets/person_outline_black_24dp.svg" alt="" />
+          <p>{{ JSON.parse(a.activity).participants }} personas</p>
+          <!-- <img src="../assets/person_outline_black_24dp.svg" alt="" /> -->
         </div>
         <div class="container my-2">
           <img src="" alt="" />
