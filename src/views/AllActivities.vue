@@ -4,7 +4,8 @@
       v-bind:activities="activities"
       class="grid grid-cols-3 gap-x-5 gap-y-6"
     />
-    <base-paginator class="mt-8" />
+    <base-paginator v-bind:page="page" v-bind:link="parseLink(link)" class="mt-8" />
+    <div justify-center>{{count}}</div>
   </div>
 </template>
 
@@ -21,11 +22,24 @@ export default {
   data() {
     return {
       activities: [],
+      page: 1,
+      count: "",
+      link: "",
     };
   },
 
   created() {
-    api.getActivities().then((activities) => (this.activities = activities));
+    api.getLink().then(link =>(this.link = link))
+    api.getCount().then((count => (this.count = count)))
+    let page = this.page;
+    api.getPaginas(page).then((activities) => (this.activities = activities));
   },
+  methods: {
+      parseLink(link){
+      let parse = require('parse-link-header');
+      return parse(link)
+      }
+        
+  }
 };
 </script>
