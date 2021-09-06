@@ -1,20 +1,17 @@
 <template>
-  <div class="grid grid-cols-2 gap-x-10 gap-y-12">
-    <base-back @click="goToBack()" class="flex justify-start">
+  <div class="grid md:grid-cols-2 gap-x-10 gap-y-12">
+    <base-back @click="goToBack()" class="col-span-2 justify-start">
       <span>Atras</span>
     </base-back>
-    <div></div>
-    <div class="container">
-      <v-carousel class="rounded-lg" height="400" :show-arrows="false">
-        <v-carousel-item
-          v-for="img in activitys.image"
-          :key="img"
-          :src="img"
-          transition="fade-transition"
-        ></v-carousel-item>
+    <v-carousel class="flex-md-column rounded-lg" height="400" :show-arrows="false">
+      <v-carousel-item
+        v-for="img in activitys.image"
+        :key="img"
+        :src="img"
+        transition="fade-transition"
+      ></v-carousel-item>
       </v-carousel>
-    </div>
-    <div class="container">
+    <div class="grid grid-cols-1">
       <h1 class="text-3xl font-mediun font-bold text-left">
         {{ activiti.title }}
       </h1>
@@ -23,23 +20,19 @@
       <p class="text-base">{{ city }}</p>
       <h3 class="text-2xl mt-12 font-medium">{{ activiti.points }}</h3>
     </div>
-    <div class="container">
+    <div class="sm:col-span-1 md:col-start-1 md:col-end-2">
       <h2 class="text-xl font-medium mb-2">¿Que Incluye?</h2>
       <hr />
       <hr />
       <hr />
       <div class="mt-8" v-html="activitys.benefits"></div>
     </div>
-    <div class="container"></div>
-    <div class="container">
+    <div class="md:col-start-1 md:col-end-2">
       <h2 class="text-xl font-bold mb-2">Reglas:</h2>
       <div>{{ activitys.small_print }}</div>
     </div>
-    <div class="container"></div>
-    <div class="container">
-      <h2 class="text-2xl font-bold mb-2">Otras actividades similares:</h2>
-    </div>
     <div class="col-span-2">
+      <h2 class="text-2xl font-bold mb-8">Otras actividades similares:</h2>
       <v-carousel
         class="rounded-lg"
         :show-arrows="false"
