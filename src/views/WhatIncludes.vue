@@ -3,14 +3,18 @@
     <base-back @click="goToBack()" class="col-span-2 justify-start">
       <span>Atras</span>
     </base-back>
-    <v-carousel class="flex-md-column rounded-lg" height="400" :show-arrows="false">
+    <v-carousel
+      class="flex-md-column rounded-lg"
+      height="400"
+      :show-arrows="false"
+    >
       <v-carousel-item
         v-for="img in activitys.image"
         :key="img"
         :src="img"
         transition="fade-transition"
       ></v-carousel-item>
-      </v-carousel>
+    </v-carousel>
     <div class="grid grid-cols-1">
       <h1 class="text-3xl font-mediun font-bold text-left">
         {{ activiti.title }}

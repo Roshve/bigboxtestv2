@@ -1,6 +1,11 @@
 <template>
   <div class="text-center">
-    <v-pagination v-model="currentPage" :length="lastPage" :total-visible="8" circle>
+    <v-pagination
+      v-model="currentPage"
+      :length="lastPage"
+      :total-visible="8"
+      circle
+    >
     </v-pagination>
   </div>
 </template>
