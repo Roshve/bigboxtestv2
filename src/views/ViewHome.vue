@@ -32,7 +32,6 @@ export default {
 
   data() {
     return {
-      activities: [],
       page: 1,
       count: "",
       link: "",
@@ -42,9 +41,18 @@ export default {
   created() {
     api.getLink().then((link) => (this.link = link));
     api.getCount().then((count) => (this.count = count));
-    let page = this.page;
-    api.getPaginas(page).then((activities) => (this.activities = activities));
   },
+
+  computed: {
+    activities() {
+      return this.$store.state.activities;
+    },
+  },
+
+  mounted() {
+    this.$store.dispatch("getActivities");
+  },
+
   methods: {
     parseLink(link) {
       let parse = require("parse-link-header");
