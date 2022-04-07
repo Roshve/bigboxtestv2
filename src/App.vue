@@ -1,7 +1,7 @@
 <template>
-  <v-main class="bg-primary font-nuni">
+  <main class="bg-primary font-nuni">
     <router-view class="container px-5 sm:px-20 py-20 flex justify-center" />
-  </v-main>
+  </main>
 </template>
 
 <script>

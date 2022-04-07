@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "BaseCard",
+  name: "ActivityCard",
 
   props: {
     activities: {

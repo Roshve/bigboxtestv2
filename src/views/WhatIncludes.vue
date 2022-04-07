@@ -3,18 +3,6 @@
     <base-back @click="goToBack()" class="col-span-2 justify-start">
       <span>Atras</span>
     </base-back>
-    <v-carousel
-      class="flex-md-column rounded-lg"
-      height="400"
-      :show-arrows="false"
-    >
-      <v-carousel-item
-        v-for="img in activitys.image"
-        :key="img"
-        :src="img"
-        transition="fade-transition"
-      ></v-carousel-item>
-    </v-carousel>
     <div class="grid grid-cols-1">
       <h1 class="text-3xl font-mediun font-bold text-left">
         {{ activiti.title }}
@@ -37,32 +25,23 @@
     </div>
     <div class="col-span-2">
       <h2 class="text-2xl font-bold mb-8">Otras actividades similares:</h2>
-      <v-carousel
-        class="rounded-lg"
-        :show-arrows="false"
-        hide-delimiters
-        height="430"
-      >
-        <v-carousel-item>
-          <base-card
-            v-bind:activities="activities"
-            class="grid grid-cols-4 gap-x-10"
-          />
-        </v-carousel-item>
-      </v-carousel>
+      <activity-card
+        v-bind:activities="activities"
+        class="grid grid-cols-4 gap-x-10"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import api from "@/api";
-import BaseCard from "@/components/BaseCard.vue";
+import ActivityCard from "@/components/ActivityCard.vue";
 import BaseBack from "@/components/BaseBack.vue";
 
 export default {
   name: "WhatIncludes",
 
-  components: { BaseCard, BaseBack },
+  components: { ActivityCard, BaseBack },
 
   data() {
     return {

@@ -1,13 +1,5 @@
 <template>
-  <div class="text-center">
-    <v-pagination
-      v-model="currentPage"
-      :length="lastPage"
-      :total-visible="8"
-      circle
-    >
-    </v-pagination>
-  </div>
+  <div class="text-center"></div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-rows-1">
-    <base-card
+    <activity-card
       v-bind:activities="activities"
       class="
         grid grid-cols-1
@@ -22,13 +22,13 @@
 
 <script>
 import api from "@/api";
-import BaseCard from "@/components/BaseCard.vue";
+import ActivityCard from "@/components/ActivityCard.vue";
 import BasePaginator from "@/components/BasePaginator.vue";
 
 export default {
   name: "AllActivities",
 
-  components: { BaseCard, BasePaginator },
+  components: { ActivityCard, BasePaginator },
 
   data() {
     return {
