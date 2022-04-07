@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-rows-1">
     <activity-card
-      v-bind:activities="activities"
+      :data-activities="activities"
       class="
         grid grid-cols-1
         sm:grid-cols-2
