@@ -2,14 +2,7 @@
   <div class="grid grid-rows-1">
     <activity-card
       :data-activities="activities"
-      class="
-        grid grid-cols-1
-        sm:grid-cols-2
-        md:grid-cols-3
-        xl:grid-cols-3
-        2xl:grid-cols-3
-        gap-x-5 gap-y-6
-      "
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-x-5 gap-y-6"
     />
     <base-paginator
       v-bind:page="page"
