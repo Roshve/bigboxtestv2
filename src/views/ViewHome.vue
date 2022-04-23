@@ -1,56 +1,39 @@
 <template>
-  <div class="grid grid-rows-1">
-    <activity-card
-      :data-activities="activities"
+  <main class="grid grid-rows-1">
+    <group-card
+      :activities="activities"
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-x-5 gap-y-6"
     />
-    <base-paginator
-      v-bind:page="page"
-      v-bind:link="parseLink(link)"
-      class="mt-8"
-    />
-    <div justify-center>{{ count }}</div>
-  </div>
+    <activity-paginator class="mt-16" :link="parseLink" />
+  </main>
 </template>
 
 <script>
-import api from "@/api";
-import ActivityCard from "@/components/ActivityCard.vue";
-import BasePaginator from "@/components/BasePaginator.vue";
+import GroupCard from "@/components/GroupCard.vue";
+import ActivityPaginator from "@/components/ActivityPaginator.vue";
 
 export default {
   name: "ViewHome",
 
-  components: { ActivityCard, BasePaginator },
-
-  data() {
-    return {
-      page: 1,
-      count: "",
-      link: "",
-    };
-  },
-
-  created() {
-    api.getLink().then((link) => (this.link = link));
-    api.getCount().then((count) => (this.count = count));
-  },
+  components: { GroupCard, ActivityPaginator },
 
   computed: {
     activities() {
       return this.$store.state.activities;
     },
+
+    headerLink() {
+      return this.$store.state.link;
+    },
+
+    parseLink() {
+      let parse = require("parse-link-header");
+      return parse(this.headerLink);
+    },
   },
 
   mounted() {
     this.$store.dispatch("getActivities");
-  },
-
-  methods: {
-    parseLink(link) {
-      let parse = require("parse-link-header");
-      return parse(link);
-    },
   },
 };
 </script>
