@@ -9,10 +9,29 @@ const store = new Vuex.Store({
     activities: [],
     link: "",
   },
+  /* for (let index = 0; index < state.activities.length; index++) {
+    state.activities[index].activity = JSON.parse(
+      state.activities[index].activity
+    ); */
+
+  /*   getters: {
+    parseActivity(state) {
+      let parse = [...state.activities];
+      let parse2 = [...state.activities];
+      let hola = [];
+      parse.map((item) => {
+        hola.push(JSON.parse(item.activity));
+      });
+      for (let index = 0; index < parse.length; index++) {
+        parse2[index].activity = hola[index];
+      }
+      return parse2;
+    },
+  }, */
 
   mutations: {
     SET_ACTIVITIES(state, activities) {
-      state.activities = activities;
+      Vue.set(state, "activities", [...activities]);
     },
     SET_LINK(state, link) {
       state.link = link;
